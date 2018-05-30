@@ -8,67 +8,93 @@
 
 module.exports = function(grunt) {
 
-  grunt.initConfig({
-    responsive_images: {
-      dev: {
-        options: {
-          engine: 'im',
-          sizes: [{
-            /*
-            Change these:
-            
-            width: ,
-            suffix: ,
-            quality:
-            */
-          }]
+    grunt.initConfig({
+
+        responsive_images: {
+            dev: {
+                options: {
+                    engine: 'im',
+                    sizes: [{
+                        /*
+                        Change these:
+
+                        width: ,
+                        suffix: ,
+                        quality:
+                        */
+                        name: 'small',
+                        width: 320,
+                        quality: 20
+                    },{
+                        name: 'medium',
+                        width: 640,
+                        quality: 30
+                    },{
+                        name: "large",
+                        width: 1024,
+                        quality: 40
+                    }]
+                },
+
+                /*
+                You don't need to change this part if you don't change
+                the directory structure.
+                */
+                files: [{
+                    expand: true,
+                    src: ['*.{gif,jpg,png}'],
+                    cwd: 'images_src/',
+                    dest: 'images/'
+                }]
+            }
         },
 
-        /*
-        You don't need to change this part if you don't change
-        the directory structure.
-        */
-        files: [{
-          expand: true,
-          src: ['*.{gif,jpg,png}'],
-          cwd: 'images_src/',
-          dest: 'images/'
-        }]
-      }
-    },
-
-    /* Clear out the images directory if it exists */
-    clean: {
-      dev: {
-        src: ['images'],
-      },
-    },
-
-    /* Generate the images directory if it is missing */
-    mkdir: {
-      dev: {
-        options: {
-          create: ['images']
+        /* Clear out the images directory if it exists */
+        clean: {
+            dev: {
+                src: ['images'],
+            },
         },
-      },
-    },
 
-    /* Copy the "fixed" images that don't go through processing into the images/directory */
-    copy: {
-      dev: {
-        files: [{
-          expand: true,
-          src: 'images_src/fixed/*.{gif,jpg,png}',
-          dest: 'images/'
-        }]
-      },
-    },
-  });
-  
-  grunt.loadNpmTasks('grunt-responsive-images');
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-mkdir');
-  grunt.registerTask('default', ['clean', 'mkdir', 'copy', 'responsive_images']);
+        /* Generate the images directory if it is missing */
+        mkdir: {
+            dev: {
+                options: {
+                    create: ['images']
+                },
+            },
+        },
 
+        /* Copy the "fixed" images that don't go through processing into the images/directory */
+        copy: {
+            dev: {
+                files: [{
+                    expand: true,
+                    src: 'images_src/fixed/*.{gif,jpg,png}',
+                    dest: 'images/'
+                }]
+            },
+        },
+
+        /* Configure the official image minification plug-in */
+        imagemin: {
+            dynamic: {
+                files: [{
+                    expand: true,
+                    cwd: 'images/',
+                    src: ['**/*.{png,jpg,gif}'],
+                    dest: 'images/build/'
+                }]
+            }
+        },
+    });
+
+    /*grunt.loadNpmTasks('grunt-run');*/
+    grunt.loadNpmTasks('grunt-responsive-images');
+    grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-mkdir');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.registerTask('default', ['clean', 'mkdir', 'copy', 'responsive_images', 'imagemin']);
 };
+
