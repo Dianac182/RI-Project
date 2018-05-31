@@ -1,4 +1,4 @@
-@import url(http://weloveiconfonts.com/api/?family=zocial);
+/*@import url(http://weloveiconfonts.com/api/?family=zocial);*/
 
 /* zocial */
 [class*="zocial-"]:before {
@@ -80,3 +80,11 @@ footer a {
 [class="zocial-googleplus"] {
     background-color: red;
 }
+
+[class*="zocial-"]:hover {
+    opacity: 0.3;
+}
+
+
+
+
