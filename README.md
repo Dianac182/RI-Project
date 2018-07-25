@@ -1,54 +1,26 @@
-# Responsive Images #
+# Responsive Images Project
 
-## Project Part 1 ##
+Make a blog fully responsive using different techniques and tools such as grunt and ImageMagick, art direction and the ```picture``` element, ```srcset``` and ```sizes``` attributes. The goal was to drop the page weight to less than 1.5MB.
 
-## Your Goals: ##
+This is the final project from the [Responsive Images](https://eu.udacity.com/course/responsive-images--ud882) course from Udacity.
 
-* Make the images fit in their containers in the viewport.
-* Restrain the width of the blog.
-* Drop the page weight.
+## Prerequisites
 
-## How you know you're done ##
+The following are the tools that were used for working in this project:
 
-A code will appear in the Udacity Feedback. Paste the code in to the Udacity classroom to complete the quiz!
+- [Node.js](https://nodejs.org/en/download/) - A JavaScript runtime built on Chrome's V8 JavaScript engine.
 
-[More on the Udacity Front-End Grading Engine](https://github.com/udacity/frontend-grading-engine)
+- [npm](https://www.npmjs.com/) - A package manager for JavaScript that gives you access to many code packages.
 
-## Current Problems with the Page ##
+- [ImageMagick](http://www.imagemagick.org/script/index.php) - Software for displaying, converting and editing images (if using [MAC](http://cactuslab.com/imagemagick/)).
+- [Grunt](https://gruntjs.com/getting-started) - A JavaScript task runner.
+- [```grunt-responsive-images```](https://github.com/andismith/grunt-responsive-images) - A grunt plugin that produces images at different sizes.
+- [```grunt-contrib-imagemin```](https://github.com/gruntjs/grunt-contrib-imagemin) - A grunt plugin that minify images.
 
-* The text is readable, but the images overflow the viewport.
-* Page weight is massive: the images have been saved as JPEGs at low quality, but they're still too big.
-* The headings, body text and images are not styled, making the post hard to read and dull to look at.
+## Contribution
 
-## General Advice ##
+If you want to contribute to this project, just make sure to follow the [Udacity Style Guide](http://udacity.github.io/frontend-nanodegree-styleguide/index.html) for writing HTML, CSS, JavaScript code, as well as commit messages when using GIT.
 
-Check the page with the Chrome Dev Tools:
+## License
 
-* Open the tools, open the Network tab, reload the page and look at the number of requests, total transfer size and time to load.
-* Change to device emulation mode by clicking the phone icon in the Dev Tools (at the top left next to the magnifying glass icon). Try the various throttling options to emulate a GPRS mobile phone cell connection -- now look at the Network tab. The page takes several minutes to complete loading. (Remember that studies by Amazon, Google and others show an increased drop off in revenue with delays of less than 0.1 seconds!) Even with a good DSL connection, load time is still over 10 seconds.
-* Try out emulation on different devices, portrait and landscape (click the icon next to the dimensions). What problems do you notice with each image? Which ones look worse?
-
-Check the page from Page Speed Insights -- lots more problems!
-
-## Project Part 2 ##
-
-## Your Goals: ##
-
-* Replace any unnecessary images (like the smiley face and the flourish).
-* Add social media icons for Twitter, Facebook, Google+ and Digg.
-* (Optional) Add a logo.
-
-## How you know you're done ##
-
-A code will appear in the Udacity Feedback when all Project Part 2 tests pass. Paste the code in to the Udacity classroom to complete the quiz!
-
-[More on the Udacity Front-End Grading Engine](https://github.com/udacity/frontend-grading-engine)
-
-## Current Problems with the Page ##
-
-* There are markup alternatives to using images. In this part of the project, try replacing, adjusting or otherwise removing images that are just adding bytes to the page.
-
-## General Advice ##
-
-What else can you accomplish in markup? Try experimenting with font icons, unicode characters, and CSS effects to create natively responsive images.
-
+This project is licensed under the MIT License - see the [LICENSE.txt](https://github.com/Dianac182/RI-Project/blob/master/LICENSE.txt) file for details
